@@ -60,18 +60,18 @@
       </div>
 
       <!--Main-->
-      <div class="container pt-24 md:pt-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+      <div class="container pt-24 md:pt-20 mx-auto flex justify-between flex-wrap flex-col md:flex-row items-center">
+
         <!--Left Col-->
-        <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
+        <div class="flex flex-col w-full xl:w-2/5 text-center lg:text-left">
 
-          <h1 class="my-4 text-3xl md:text-5xl text-white opacity-75 font-bold leading-tight text-center md:text-left">
-
+          <h1 class="leading-normal lg:my-4 text-4xl md:text-5xl text-white opacity-75 font-bold">
             <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500">
               Decentralized
             </span>
             trading unleashed
           </h1>
-          <p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left">
+          <p class="leading-normal text-base md:text-2xl mb-8">
             The only concentrated liquidity AMM on Solana
           </p>
 
@@ -93,44 +93,49 @@
         </div>
 
         <!--Right Col-->
-        <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
+        <div class="flex flex-col w-full xl:w-2/5 justify-center xl:items-end sm:px-6 md:px-20 xl:px-10">
 
-          <h1 class="my-4 text-3xl md:text-5xl text-white opacity-75 font-bold leading-tight text-center md:text-left">
+          <!-- Solana card -->
+          <figure class="md:flex flex-grow bg-gray-800 rounded-xl mt-8 md:mt-4 p-6 md:py-1">
+            <img class="w-14 h-auto md:w-19 md:h-auto mx-auto" src="static/solana-logo.svg"
+              alt="Solana icon">
+            <!-- Card text -->
+            <div class="md:p-4 md:pl-8 text-center md:text-left space-y-2">
+              <h1 class="pt-4 md:pt-0 text-2xl font-semibold text-green-500">Built on Solana</h1>
+              <p class="text-base text-gray-300">
+                The fastest blockchain in the world, supporting 50k TPS
+              </p>
+            </div>
+          </figure>
 
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500">
-              Decentralized
-            </span>
-            trading unleashed
-          </h1>
-          <p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left">
-            The only concentrated liquidity AMM on Solana
-          </p>
+          <!-- Serum card -->
+          <figure class="md:flex flex-grow bg-gray-800 rounded-xl mt-8 md:mt-4 p-6 md:py-1">
+            <img class="w-14 h-auto md:w-19 md:h-auto mx-auto" src="static/serum-logo.svg"
+              alt="Serum icon">
+            <!-- Card text -->
+            <div class="pt-4 md:p-4 md:pl-8 text-center md:text-left space-y-2">
+              <h1 class="text-2xl font-semibold text-pink-400">Serum Orderbooks</h1>
+              <p class="text-base text-gray-300">
+                Powering ecosystem wide liquidity on Solana
+              </p>
+            </div>
+          </figure>
 
-          <div class="items-center text-center md:text-left space-x-4">
-            <button
-              class="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-              type="button">
-              <div class="opacity-70">Trade Now</div>
+          <!-- Concentrated liquidity card -->
+          <figure class="md:flex flex-grow bg-gray-800 rounded-xl mt-8 md:mt-4 p-6 md:py-1">
+            <img class="w-14 h-auto md:w-19 md:h-auto mx-auto" src="static/cyclos-logo.svg"
+              alt="Cyclos icon">
+            <!-- Card text -->
+            <div class="pt-4 md:p-4 md:pl-8 text-center md:text-left space-y-2">
+              <h1 class="text-2xl font-semibold text-blue-500">Concentrated liquidity</h1>
+              <p class="text-base text-gray-300">
+                Higher returns and lower impermanent loss
+              </p>
+            </div>
+          </figure>
 
-            </button>
-
-            <button
-              class="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-              type="button">
-              <div class="opacity-70">Trade Now</div>
-
-            </button>
-          </div>
         </div>
 
-
-
-        <div class="w-full xl:w-3/5 p-12 overflow-hidden">
-          <p>On chain orderbook</p>
-          <!-- <img
-            class="mx-auto w-full md:w-4/5 transform -rotate-6 transition hover:scale-105 duration-700 ease-in-out hover:rotate-6"
-            src="macbook.svg" /> -->
-        </div>
 
       </div>
     </div>
