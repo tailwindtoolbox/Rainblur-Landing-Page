@@ -142,4 +142,28 @@
       </div>
     </div>
   </body>
+  <!-- Google Analytics -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyBN1Fu7yLJGsVUMAJhOGg2UusenNAledoc",
+      authDomain: "cyclos-finance.firebaseapp.com",
+      projectId: "cyclos-finance",
+      storageBucket: "cyclos-finance.appspot.com",
+      messagingSenderId: "709533259346",
+      appId: "1:709533259346:web:655534772a07f96d51f18b",
+      measurementId: "G-8JZ4922GBR"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
 </html>
