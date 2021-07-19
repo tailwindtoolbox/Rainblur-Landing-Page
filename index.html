@@ -29,17 +29,17 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
   </head>
 
-  <body class="leading-normal tracking-normal text-indigo-400 m-6 bg-cover bg-fixed" style="background-image: url('header.png');">
-    <div class="h-full">
+  <body class="leading-normal tracking-normal text-indigo-400 bg-cover bg-fixed" style="background-image: url('header.png');">
+    <div class="h-screen flex flex-col">
       <!--Nav-->
-      <div class="w-full container mx-auto">
-        <div class="w-full flex items-center justify-between">
+      <div class="w-full container mx-auto py-4">
+        <div class="w-full flex items-center justify-around flex-col sm:flex-row">
           <div class="flex">
             <img class="cyclos-text-logo" src="./static/cyclos-text-logo.svg" alt="ChitChat Logo">
           </div>
 
           <!-- Socials -->
-          <div class="flex w-1/2 justify-end content-center">
+          <div class="flex w-1/2 justify-center sm:justify-end content-center">
             <!-- Twitter -->
             <a class="inline-block text-blue-300 no-underline hover:text-pink-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out"
               href="https://twitter.com/cyclosfi" target="_blank">
@@ -71,10 +71,10 @@
       </div>
 
       <!--Main-->
-      <div class="container pt-24 md:pt-20 mx-auto flex justify-between flex-wrap flex-col md:flex-row items-center">
+      <div class="container flex-grow pb-16 align-center m-auto flex justify-around flex-wrap flex-col xl:flex-row items-center">
 
         <!--Left Col-->
-        <div class="flex flex-col w-full xl:w-2/5 text-center lg:text-left">
+        <div class="flex flex-col w-full xl:w-2/5 px-6  text-center xl:text-left">
 
           <h1 class="leading-normal lg:my-4 text-4xl md:text-5xl text-white opacity-75 font-bold">
             <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-100 via-pink-500 to-purple-300">
@@ -86,7 +86,7 @@
             The only concentrated liquidity market maker on Solana
           </p>
 
-          <div class="items-center space-x-4">
+          <div class="items-center space-x-4 my-6">
             <a href="https://app.cyclos.io"
             class="bg-gradient-to-r from-purple-800 to-green-600 hover:from-pink-500 hover:to-green-500  hover:text-black text-gray-200 py-2 px-6 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out">
               Preview
@@ -101,10 +101,10 @@
         </div>
 
         <!--Right Col-->
-        <div class="flex flex-col w-full xl:w-2/5 justify-center xl:items-end sm:px-6 md:px-20 xl:px-10">
+        <div class="flex flex-col max-w-2xl xl:w-2/5 justify-center xl:items-end sm:px-6 md:px-20 xl:px-10">
 
           <!-- Solana card -->
-          <figure class="md:flex flex-grow bg-gray-800 rounded-xl mt-8 md:mt-4 p-6 md:py-1">
+          <figure class="md:flex flex-grow bg-gray-800 rounded-xl m-6 md:mt-4 p-6 md:py-1">
             <img class="w-14 h-auto md:w-19 md:h-auto mx-auto" src="static/solana-logo.svg"
               alt="Solana icon">
             <!-- Card text -->
@@ -117,7 +117,7 @@
           </figure>
 
           <!-- Serum card -->
-          <figure class="md:flex flex-grow bg-gray-800 rounded-xl mt-8 md:mt-4 p-6 md:py-1">
+          <figure class="md:flex flex-grow bg-gray-800 rounded-xl m-6 md:mt-4 p-6 md:py-1">
             <img class="w-14 h-auto md:w-19 md:h-auto mx-auto" src="static/serum-logo.svg"
               alt="Serum icon">
             <!-- Card text -->
@@ -130,7 +130,7 @@
           </figure>
 
           <!-- Concentrated liquidity card -->
-          <figure class="md:flex flex-grow bg-gray-800 rounded-xl mt-8 md:mt-4 p-6 md:py-1">
+          <figure class="md:flex flex-grow bg-gray-800 rounded-xl m-6 md:mt-4 p-6 md:py-1">
             <img class="w-14 h-auto md:w-19 md:h-auto mx-auto" src="static/cyclos-logo.svg"
               alt="Cyclos icon">
             <!-- Card text -->
