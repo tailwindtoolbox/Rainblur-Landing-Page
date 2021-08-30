@@ -8,29 +8,69 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
-    <link href="https://unpkg.com/@tailwindcss/custom-forms/dist/custom-forms.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss/dist/tailwind.min.css"
+    />
+    <link
+      href="https://unpkg.com/@tailwindcss/custom-forms/dist/custom-forms.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Fontawesome icons -->
-    <script src="https://kit.fontawesome.com/d8f00aaf1e.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/d8f00aaf1e.js"
+      crossorigin="anonymous"
+    ></script>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
       html {
-        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+          "Noto Color Emoji";
+        scroll-snap-type: y mandatory;
       }
 
-      .cyclos-text-logo {
-        height: 5rem;
+      *::-webkit-scrollbar {
+        width: 0.5rem;
+      }
+      *::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(71, 62, 88, 0.3);
+        background-color: #1e1d29;
+      }
+      *::-webkit-scrollbar-thumb {
+        background-color: #10b981;
+        border-radius: 1rem;
       }
 
       .glass {
-        background: rgba( 31, 41, 55, 0.7 );
-        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.30 );
-        backdrop-filter: blur( 3px );
-        -webkit-backdrop-filter: blur( 3px );
+        background: rgba(31, 41, 55, 0.6);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3);
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
         border-radius: 10px;
         border: 1px solid rgba(85, 102, 128, 0.2);
+      }
+
+      .icard{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+      }
+
+      .icard > img{
+        flex: 1 1 auto;
+        padding: 1rem 0.5rem;
+      }
+
+      @media screen and (min-width: 640px){
+        .snap-start {
+          scroll-snap-align: start;
+        }
       }
     </style>
 
@@ -38,26 +78,38 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
   </head>
 
-  <body class="leading-normal tracking-normal text-indigo-400 bg-cover bg-fixed" style="background-image: url('header.png');">
-    <div class="h-screen flex flex-col ">
+  <body
+    class="leading-normal tracking-normal text-indigo-400 bg-cover bg-fixed p-1"
+    style="background-image: url('header.png')"
+  >
+    <section class="min-h-screen flex flex-col snap-start">
       <!--Nav-->
       <div class="w-full py-4">
-        <div class="w-full flex items-center justify-evenly flex-col sm:flex-row">
+        <div
+          class="w-full flex items-center justify-evenly flex-col sm:flex-row"
+        >
           <div class="flex xl:w-1/4">
-            <img class="cyclos-text-logo" src="./static/cyclos-text-logo.svg" alt="ChitChat Logo">
+            <img
+              class="h-20"
+              src="./static/cyclos-text-logo.svg"
+              alt="ChitChat Logo"
+            />
           </div>
 
           <!-- Socials -->
           <div class="flex w-1/2 justify-center sm:justify-end content-center">
             <!-- Twitter -->
-            <a class="inline-block text-blue-300 no-underline hover:text-pink-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out"
-              href="https://twitter.com/cyclosfi" target="_blank">
+            <a
+              class=" inline-block text-blue-300 no-underline hover:text-pink-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out"
+              href="https://twitter.com/cyclosfi"
+              target="_blank"
+            >
               <i class="fab fa-twitter fa-lg"></i>
             </a>
 
             <!-- Telegram -->
             <a
-              class="inline-block text-blue-300 no-underline hover:text-pink-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out"
+              class=" inline-block text-blue-300 no-underline hover:text-pink-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out"
               href="https://t.me/cyclosofficialchat"
               target="_blank"
             >
@@ -65,20 +117,29 @@
             </a>
 
             <!-- Discord -->
-            <a class="inline-block text-blue-300 no-underline hover:text-pink-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out"
-              href="https://discord.gg/vpbTxzHWYg" target="_blank">
+            <a
+              class=" inline-block text-blue-300 no-underline hover:text-pink-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out"
+              href="https://discord.gg/vpbTxzHWYg"
+              target="_blank"
+            >
               <i class="fab fa-discord fa-lg"></i>
             </a>
 
             <!-- Medium -->
-            <a class="inline-block text-blue-300 no-underline hover:text-pink-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out"
-              href="https://medium.com/@cyclosfinance" target="_blank">
+            <a
+              class=" inline-block text-blue-300 no-underline hover:text-pink-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out"
+              href="https://medium.com/@cyclosfinance"
+              target="_blank"
+            >
               <i class="fab fa-medium-m fa-lg"></i>
             </a>
 
             <!-- Email -->
-            <a class="inline-block text-blue-300 no-underline hover:text-pink-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out"
-              href="mailto:contact@cyclos.io" target="_blank">
+            <a
+              class=" inline-block text-blue-300 no-underline hover:text-pink-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out"
+              href="mailto:contact@cyclos.io"
+              target="_blank"
+            >
               <i class="far fa-envelope fa-lg"></i>
             </a>
           </div>
@@ -86,13 +147,19 @@
       </div>
 
       <!--Main-->
-      <div class="container flex-grow pb-16 align-center m-auto flex justify-around flex-wrap flex-col xl:flex-row items-center">
-
+      <div
+        class=" container flex-grow pb-16 align-center m-auto flex justify-around flex-wrap flex-col xl:flex-row items-center"
+      >
         <!--Left Col-->
-        <div class="flex flex-col w-full xl:w-2/5 text-center 2xl:p-12 md:px-6  xl:text-left">
-
-          <h1 class="leading-relaxed lg:my-4 text-4xl md:text-5xl text-white opacity-75 font-bold">
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-100 via-pink-500 to-purple-300">
+        <div
+          class="flex flex-col w-full px-2 xl:w-2/5 text-center 2xl:p-12 md:px-6 xl:text-left"
+        >
+          <h1
+            class="leading-relaxed  lg:my-4  text-4xl  md:text-5xl  text-white  opacity-75  font-bold"
+          >
+            <span
+              class="bg-clip-text text-transparent bg-gradient-to-r from-green-100 via-pink-500 to-purple-300"
+            >
               Decentralized
             </span>
             <span class="leading-normal">trading unleashed</span>
@@ -102,29 +169,41 @@
           </p>
 
           <div class="flex gap-6 justify-center xl:justify-start items-center">
-            <a href="https://app.cyclos.io"
-            class="bg-gradient-to-r from-purple-800 to-green-600 hover:from-pink-500 hover:to-green-500  hover:text-black text-gray-200 py-2 px-6 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out">
+            <a
+              href="https://app.cyclos.io"
+              class="bg-gradient-to-r from-purple-800 to-green-600 hover:from-pink-500 hover:to-green-500 hover:text-black text-gray-200 py-2 px-6 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
+            >
               Preview
             </a>
 
-            <a href="https://firebasestorage.googleapis.com/v0/b/cyclos-finance.appspot.com/o/public%2Fcyclos-litepaper.pdf?alt=media"
+            <a
+              href="https://firebasestorage.googleapis.com/v0/b/cyclos-finance.appspot.com/o/public%2Fcyclos-litepaper.pdf?alt=media"
               target="_blank"
-              class="py-2 px-3 rounded border-white border-2 text-gray-200">
+              class="py-2 px-3 rounded border-white border-2 text-gray-200"
+            >
               Litepaper
             </a>
           </div>
         </div>
 
         <!--Right Col-->
-        <div class="flex flex-col max-w-2xl xl:w-2/5 justify-center px-2 sm:px-10 items-stretch">
-
+        <div
+          class=" flex flex-col max-w-2xl xl:w-3/5 justify-center px-2 mt-10 xl:mt-0 sm:px-10 items-stretch"
+        >
           <!-- Solana card -->
-          <figure class="md:flex glass flex-grow bg-gray-800 rounded-xl m-6 md:mt-4 p-6 md:py-1">
-            <img class="w-14 h-auto md:w-19 md:h-auto mx-auto" src="static/solana-logo.svg"
-              alt="Solana icon">
+          <figure
+            class=" md:flex glass flex-grow bg-gray-800 rounded-xl m-4 p-6 md:py-1"
+          >
+            <img
+              class="w-14 h-auto md:w-19 md:h-auto mx-auto"
+              src="static/solana-logo.svg"
+              alt="Solana icon"
+            />
             <!-- Card text -->
             <div class="md:p-4 md:pl-8 text-center md:text-left space-y-2">
-              <h1 class="pt-4 md:pt-0 text-2xl font-semibold text-green-500">Built on Solana</h1>
+              <h1 class="pt-4 md:pt-0 text-2xl font-semibold text-green-500">
+                Built on Solana
+              </h1>
               <p class="text-base text-gray-300">
                 The fastest blockchain in the world, with 50k TPS
               </p>
@@ -132,12 +211,19 @@
           </figure>
 
           <!-- Serum card -->
-          <figure class="md:flex glass flex-grow bg-gray-800 rounded-xl m-6 md:mt-4 p-6 md:py-1">
-            <img class="w-14 h-auto md:w-19 md:h-auto mx-auto" src="static/serum-logo.svg"
-              alt="Serum icon">
+          <figure
+            class=" md:flex glass flex-grow bg-gray-800 rounded-xl m-4 p-6 md:py-1"
+          >
+            <img
+              class="w-14 h-auto md:w-19 md:h-auto mx-auto"
+              src="static/serum-logo.svg"
+              alt="Serum icon"
+            />
             <!-- Card text -->
             <div class="pt-4 md:p-4 md:pl-8 text-center md:text-left space-y-2">
-              <h1 class="text-2xl font-semibold text-pink-400">Serum Orderbooks</h1>
+              <h1 class="text-2xl font-semibold text-pink-400">
+                Serum Orderbooks
+              </h1>
               <p class="text-base text-gray-300">
                 Powering ecosystem wide liquidity on Solana
               </p>
@@ -145,12 +231,19 @@
           </figure>
 
           <!-- Concentrated liquidity card -->
-          <figure class="md:flex glass flex-grow bg-gray-800 rounded-xl m-6 md:mt-4 p-6 md:py-1">
-            <img class="w-14 h-auto md:w-19 md:h-auto mx-auto" src="static/cyclos-logo.svg"
-              alt="Cyclos icon">
+          <figure
+            class=" md:flex glass flex-grow bg-gray-800 rounded-xl m-4 p-6 md:py-1"
+          >
+            <img
+              class="w-14 h-auto md:w-19 md:h-auto mx-auto"
+              src="static/cyclos-logo.svg"
+              alt="Cyclos icon"
+            />
             <!-- Card text -->
             <div class="pt-4 md:p-4 md:pl-8 text-center md:text-left space-y-2">
-              <h1 class="text-2xl font-semibold text-blue-500">Concentrated liquidity</h1>
+              <h1 class="text-2xl font-semibold text-blue-500">
+                Concentrated liquidity
+              </h1>
               <p class="text-base text-gray-300">
                 Higher returns from enhanced capital efficiency
               </p>
@@ -158,7 +251,63 @@
           </figure>
         </div>
       </div>
-    </div>
+    </section>
+    <section class="min-h-screen flex flex-col snap-start">
+      <div
+        class="container flex-grow m-auto flex flex-col justify-around items-center"
+      >
+        <h3 class="text-4xl xl:text-6xl font-bold my-6">Backed by</h3>
+        <div 
+          class="mb-16 grid grid-flow-row-dense place-content-center gap-4
+            grid-cols-2
+            md:grid-cols-3
+            lg:grid-cols-4
+            xl:grid-cols-5
+          "
+        >
+          <div class="glass icard w-36 xl:w-48 sm:w-44">
+            <img class="" src="static/CMS-01.svg" title="CMS" alt="CMS"/>
+            <!-- <p class="text-white">CMS</p> -->
+          </div>
+          <div class="glass icard w-36 xl:w-48 sm:w-44">
+            <img class="" src="static/COIN98 VENTURES-04.svg" title="Coin98 Ventures" alt="Coin98 Ventures"/>
+            <!-- <p class="text-white">Coin98 Ventures</p> -->
+          </div>
+          <div class="glass icard w-36 xl:w-48 sm:w-44">
+            <img class="" src="static/GATE.IO-08.svg" title="Gate.io Labs" alt="Gate.io Labs"/>
+            <!-- <p class="text-white">Gate.io Labs</p> -->
+          </div>
+          <div class="glass icard w-36 xl:w-48 sm:w-44">
+            <img class="" src="static/HASKEY-02.svg" title="Hashkey" alt="Hashkey"/>
+            <!-- <p class="text-white">Hashkey</p> -->
+          </div>
+          <div class="glass icard w-36 xl:w-48 sm:w-44">
+            <img class="" src="static/HUOBI VENTURES-05.svg" title="Huobi Ventures" alt="Huobi Ventures"/>
+            <!-- <p class="text-white">Huobi Ventures</p> -->
+          </div>
+          <div class="glass icard w-36 xl:w-48 sm:w-44">
+            <img class="" src="static/ILLUSIONIST GROUP-06.svg" title="Illusionist Group" alt="Illusionist Group"/>
+            <!-- <p class="text-white">Illusionist Group</p> -->
+          </div>
+          <div class="glass icard w-36 xl:w-48 sm:w-44">
+            <img class="" src="static/MXC-07.svg" title="MXC" alt="MXC"/>
+            <!-- <p class="text-white">MXC</p> -->
+          </div>
+          <div class="glass icard w-36 xl:w-48 sm:w-44">
+            <img class="" src="static/PETROCK CAPITAL-10.svg" title="Petrock Capital" alt="Petrock Capital"/>
+            <!-- <p class="text-white">Petrock Capital</p> -->
+          </div>
+          <div class="glass icard w-36 xl:w-48 sm:w-44">
+            <img class="" src="static/SKYVISION-09.svg" title="Skyvision Capital" alt="Skyvision Capital"/>
+            <!-- <p class="text-white">Skyvision Capital</p> -->
+          </div>
+          <div class="glass icard w-36 xl:w-48 sm:w-44">
+            <img class="" src="static/SOLANA CAPITAL-03.svg" title="Solana Capital" alt="Solana Capital"/>
+            <!-- <p class="text-white">Solana Capital</p> -->
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
   <!-- Google Analytics -->
   <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -178,7 +327,7 @@
       storageBucket: "cyclos-finance.appspot.com",
       messagingSenderId: "709533259346",
       appId: "1:709533259346:web:655534772a07f96d51f18b",
-      measurementId: "G-8JZ4922GBR"
+      measurementId: "G-8JZ4922GBR",
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
