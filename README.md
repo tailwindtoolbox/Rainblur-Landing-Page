@@ -23,8 +23,6 @@ Take a look at our [setup guide](https://www.tailwindtoolbox.com/setup) to start
 
 * Add your site here :)
 
-* [webthree.today](https://webthree.today)
-
 
 ## Bugs and Issues
 
