@@ -21,7 +21,7 @@ Take a look at our [setup guide](https://www.tailwindtoolbox.com/setup) to start
 
 ## Sites created using this template
 
-* Add your site here :)
+* [Teto.ee](https://teto.ee) - Landing page for a Chrome extension that helps with learning Estonian.
 
 
 ## Bugs and Issues
