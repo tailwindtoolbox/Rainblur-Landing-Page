@@ -4,113 +4,242 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Rainblur Landing Page Template: Tailwind Toolbox</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <title>Neo<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-purple-500">Grid</span> - Cyberpunk Landing</title>
+    <meta name="description" content="Enter the neon grid. Access the future." />
+    <meta name="keywords" content="cyberpunk, neon, futuristic, grid, neo" />
 
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
-    <!--Replace with your tailwind.css once created-->
     <link href="https://unpkg.com/@tailwindcss/custom-forms/dist/custom-forms.min.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap">
 
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
-
+      @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap");
+      
       html {
-        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-family: "Rajdhani", "Orbitron", monospace;
+        background: #0a0a0a;
+      }
+
+      /* Cyberpunk Neon Glow */
+      .neon-glow {
+        text-shadow: 
+          0 0 5px #00f5ff, 
+          0 0 10px #00f5ff, 
+          0 0 15px #00f5ff, 
+          0 0 20px #ff00ff,
+          0 0 35px #ff00ff,
+          0 0 40px #ff00ff;
+      }
+      
+      .neon-cyan { 
+        text-shadow: 
+          0 0 5px #00f5ff, 
+          0 0 10px #00f5ff, 
+          0 0 20px #00f5ff, 
+          0 0 40px #00f5ff; 
+      }
+      
+      .neon-magenta { 
+        text-shadow: 
+          0 0 5px #ff00ff, 
+          0 0 10px #ff00ff, 
+          0 0 20px #ff00ff, 
+          0 0 40px #ff00ff; 
+      }
+      
+      /* Glitch Animation */
+      @keyframes glitch {
+        0% { transform: translate(0); }
+        20% { transform: translate(-2px, 2px); }
+        40% { transform: translate(-2px, -2px); }
+        60% { transform: translate(2px, 2px); }
+        80% { transform: translate(2px, -2px); }
+        100% { transform: translate(0); }
+      }
+      
+      .glitch {
+        animation: glitch 0.3s infinite;
+      }
+      
+      /* Scan Lines */
+      .scanlines::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+          transparent 50%, 
+          rgba(0,255,255,0.03) 50%
+        );
+        background-size: 100% 2px;
+        pointer-events: none;
+        z-index: 10;
+      }
+      
+      /* Matrix Rain */
+      .matrix-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        opacity: 0.1;
       }
     </style>
   </head>
 
-  <body class="leading-normal tracking-normal text-indigo-400 m-6 bg-cover bg-fixed" style="background-image: url('header.png');">
-    <div class="h-full">
+  <body class="relative overflow-hidden text-cyan-400 bg-black bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'); background-position: center;">
+    
+    <!-- Matrix Rain Overlay -->
+    <canvas class="matrix-bg" id="matrix"></canvas>
+    
+    <!-- Scanlines Overlay -->
+    <div class="fixed inset-0 scanlines pointer-events-none"></div>
+
+    <div class="h-screen relative z-10">
       <!--Nav-->
-      <div class="w-full container mx-auto">
+      <div class="w-full container mx-auto p-6">
         <div class="w-full flex items-center justify-between">
-          <a class="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
-            Rain<span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500">blur</span>
+          <a class="flex items-center text-3xl font-black tracking-wider no-underline hover:no-underline neon-cyan hover:glitch" href="#">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500">NEO</span>
+            <span class="neon-magenta ml-2">GRID</span>
           </a>
 
-          <div class="flex w-1/2 justify-end content-center">
-            <a class="inline-block text-blue-300 no-underline hover:text-pink-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out" href="https://twitter.com/intent/tweet?url=#">
-              <svg class="fill-current h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                <path
-                  d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"
-                ></path>
+          <div class="flex space-x-4">
+            <a class="group relative inline-block p-3 rounded-full bg-black bg-opacity-50 border-2 border-cyan-500 hover:border-pink-500 transform hover:scale-125 duration-300 neon-glow hover:neon-magenta" href="https://twitter.com/intent/tweet?url=#">
+              <svg class="fill-current h-6 group-hover:animate-pulse" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path>
               </svg>
+              <div class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-pink-500 opacity-0 group-hover:opacity-20 rounded-full blur-xl animate-ping"></div>
             </a>
-            <a
-              class="inline-block text-blue-300 no-underline hover:text-pink-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out"
-              href="https://www.facebook.com/sharer/sharer.php?u=#"
-            >
-              <svg class="fill-current h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            
+            <a class="group relative inline-block p-3 rounded-full bg-black bg-opacity-50 border-2 border-pink-500 hover:border-cyan-500 transform hover:scale-125 duration-300 neon-glow hover:neon-cyan" href="https://www.facebook.com/sharer/sharer.php?u=#">
+              <svg class="fill-current h-6 group-hover:animate-pulse" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                 <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path>
               </svg>
+              <div class="absolute inset-0 bg-gradient-to-r from-pink-500 to-cyan-500 opacity-0 group-hover:opacity-20 rounded-full blur-xl animate-ping"></div>
             </a>
           </div>
         </div>
       </div>
 
       <!--Main-->
-      <div class="container pt-24 md:pt-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+      <div class="container pt-24 md:pt-36 mx-auto flex flex-wrap flex-col md:flex-row items-center px-6">
         <!--Left Col-->
-        <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
-          <h1 class="my-4 text-3xl md:text-5xl text-white opacity-75 font-bold leading-tight text-center md:text-left">
-            Main
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500">
-              Hero Message
+        <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start z-20 relative">
+          <h1 class="my-4 text-4xl md:text-6xl lg:text-7xl font-black leading-tight text-center md:text-left uppercase tracking-wider glitch">
+            <span class="block text-white opacity-80 mb-4">ACCESS</span>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-purple-500 neon-glow">
+              THE NEON<span class="block">GRID</span>
             </span>
-            to sell yourself!
+            <span class="text-sm block mt-4 text-purple-400 font-mono tracking-widest">SYSTEM ONLINE</span>
           </h1>
-          <p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left">
-            Sub-hero message, not too long and not too short. Make it just right!
+          
+          <p class="leading-relaxed text-lg md:text-2xl mb-12 text-cyan-200 font-light max-w-lg">
+            Breach the corporate firewall. Download the neural interface. Become the signal.
           </p>
 
-          <form class="bg-gray-900 opacity-75 w-full shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4">
-            <div class="mb-4">
-              <label class="block text-blue-300 py-2 font-bold mb-2" for="emailaddress">
-                Signup for our newsletter
-              </label>
+          <form class="relative bg-black bg-opacity-70 backdrop-blur-xl border border-cyan-500 border-opacity-50 w-full shadow-2xl rounded-xl px-8 pt-8 pb-10 mb-8 overflow-hidden">
+            <div class="scanlines"></div>
+            <div class="mb-6 relative">
+              <label class="block text-cyan-300 py-2 font-mono text-sm uppercase tracking-wider mb-3 neon-glow">Neural Link ID</label>
               <input
-                class="shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-                id="emailaddress"
+                class="w-full p-4 bg-transparent border-2 border-cyan-500 border-opacity-50 rounded-lg text-cyan-400 font-mono text-lg focus:border-pink-500 focus:ring-4 focus:ring-pink-500 focus:ring-opacity-30 focus:outline-none transition-all duration-300 hover:border-opacity-100 backdrop-blur-sm"
+                id="neuralid"
                 type="text"
-                placeholder="you@somewhere.com"
+                placeholder="x7k9-neo-47grid..."
               />
+              <div class="absolute inset-0 pointer-events-none bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
             </div>
 
             <div class="flex items-center justify-between pt-4">
+              <span class="text-xs text-purple-500 font-mono uppercase tracking-wider">SECURE CONNECTION</span>
               <button
-                class="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
+                class="group relative bg-gradient-to-r from-purple-900 via-pink-600 to-cyan-500 hover:from-pink-500 hover:via-purple-500 hover:to-cyan-400 text-white font-black py-4 px-8 rounded-lg focus:ring-4 focus:ring-cyan-500 focus:ring-opacity-50 transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,245,255,0.6)] neon-glow overflow-hidden"
                 type="button"
               >
-                Sign Up
+                <span class="relative z-10 uppercase tracking-widest text-sm">JACK IN</span>
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               </button>
             </div>
           </form>
         </div>
 
         <!--Right Col-->
-        <div class="w-full xl:w-3/5 p-12 overflow-hidden">
-          <img class="mx-auto w-full md:w-4/5 transform -rotate-6 transition hover:scale-105 duration-700 ease-in-out hover:rotate-6" src="macbook.svg" />
+        <div class="w-full xl:w-3/5 p-12 overflow-hidden relative z-10">
+          <div class="relative">
+            <img class="mx-auto w-full md:w-4/5 transform -rotate-12 hover:rotate-0 transition-all duration-1000 hover:scale-110 filter drop-shadow-[0_0_50px_rgba(0,255,255,0.5)]" src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cyberdeck" />
+            <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-transparent to-pink-500/20 animate-pulse rounded-2xl"></div>
+          </div>
         </div>
 
-        <div class="mx-auto md:pt-16">
-          <p class="text-blue-400 font-bold pb-8 lg:pb-6 text-center">
-            Download our app:
+        <div class="mx-auto md:pt-16 w-full text-center">
+          <p class="text-cyan-400 font-mono text-lg pb-8 uppercase tracking-widest neon-glow">
+            INTERFACE DOWNLOAD
           </p>
-          <div class="flex w-full justify-center md:justify-start pb-24 lg:pb-0 fade-in">
-            <img src="App Store.svg" class="h-12 pr-12 transform hover:scale-125 duration-300 ease-in-out" />
-            <img src="Play Store.svg" class="h-12 transform hover:scale-125 duration-300 ease-in-out" />
+          <div class="flex w-full justify-center md:justify-start pb-24 lg:pb-0 space-x-6">
+            <div class="group relative">
+              <img src="https://img.shields.io/badge/App_Store-000000?style=for-the-badge&logo=app-store&logoColor=white" class="h-16 p-3 bg-black bg-opacity-70 backdrop-blur-xl rounded-2xl border-2 border-cyan-500 hover:border-pink-500 transform hover:scale-125 duration-300 shadow-[0_0_20px_rgba(0,255,255,0.5)]" alt="App Store" />
+              <div class="absolute -inset-2 bg-gradient-radial from-cyan-500 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse blur-xl"></div>
+            </div>
+            <div class="group relative">
+              <img src="https://img.shields.io/badge/Play_Store-414141?style=for-the-badge&logo=google-play&logoColor=white" class="h-16 p-3 bg-black bg-opacity-70 backdrop-blur-xl rounded-2xl border-2 border-pink-500 hover:border-cyan-500 transform hover:scale-125 duration-300 shadow-[0_0_20px_rgba(255,0,255,0.5)]" alt="Play Store" />
+              <div class="absolute -inset-2 bg-gradient-radial from-pink-500 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse blur-xl"></div>
+            </div>
           </div>
         </div>
 
         <!--Footer-->
-        <div class="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
-          <a class="text-gray-500 no-underline hover:no-underline" href="#">&copy; App 2020</a>
-          - Template by
-          <a class="text-gray-500 no-underline hover:no-underline" href="https://www.tailwindtoolbox.com">TailwindToolbox.com</a>
+        <div class="w-full pt-16 pb-6 text-sm text-center md:text-left text-purple-500 font-mono tracking-wider fade-in">
+          <span class="block mb-2">NEURAL INTERFACE v2.07</span>
+          <a class="hover:text-cyan-400 transition-colors duration-300" href="#">© 2077 NeoGrid Corp</a>
+          <span class="mx-2">•</span>
+          <a class="hover:text-pink-400 transition-colors duration-300" href="#">Source Code</a>
         </div>
       </div>
     </div>
+
+    <script>
+      // Simple Matrix Rain Effect
+      const canvas = document.getElementById('matrix');
+      const ctx = canvas.getContext('2d');
+      
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      
+      const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンガギグゲゴザジズゼゾダヂヅデドバビブベボパピプペポ';
+      const fontSize = 14;
+      const columns = canvas.width / fontSize;
+      const drops = Array(Math.floor(columns)).fill(1);
+      
+      function draw() {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        ctx.fillStyle = '#00ff41';
+        ctx.font = `${fontSize}px monospace`;
+        
+        drops.forEach((y, i) => {
+          const text = chars[Math.floor(Math.random() * chars.length)];
+          ctx.fillText(text, i * fontSize, y * fontSize);
+          
+          if (y * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+          drops[i]++;
+        });
+      }
+      
+      setInterval(draw, 50);
+      
+      window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+    </script>
   </body>
 </html>
